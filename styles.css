@@ -1,0 +1,26 @@
+html{
+    padding: 10px;
+    margin: 2px;
+}
+
+.item-description {
+    width: 200px;
+    height: 20px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.item-completed:checked + .item-description {
+    text-decoration: line-through;
+    color: rgb(156, 41, 41);
+}
+
+#add {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
