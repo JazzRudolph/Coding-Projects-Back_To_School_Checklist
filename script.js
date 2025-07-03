@@ -26,14 +26,20 @@ function addItem() { // Create a new item and add it to the list
     refreshList();
 }
 
+function updateItem(item, key, value) {
+    item[key] = value;
+    setitems(items);
+    refreashList();
+}
+
 function refreshList() {
     // Clear the current list
 
     ITEM_CONTAINER.innerHTML = "";
 
     for (const item of items) {
-        const itemElement = ITEM_TEMPLATE.contentEditable.cloneNode(true);
-        constdescriptionInput = itemElement.querySelector(".item-description");
+        const itemElement = ITEM_TEMPLATE.content.cloneNode(true);
+        const descriptionInput = itemElement.querySelector(".item-description");
         const completedInput = itemElement.querySelector(".item-completed");
 
         descriptionInput.value = item.description;
@@ -44,4 +50,8 @@ function refreshList() {
     }
 }
 
-console.log(items);
+ADD_BUTTON.addEventListener('click', () => {
+    addItem();
+});
+
+refreshList();
