@@ -45,6 +45,15 @@ function refreshList() {
         descriptionInput.value = item.description;
         completedInput.checked = item.completed;
 
+        descriptionInput.addEventListener('change', () => {
+            updateItem(item, "description", descriptionInput.value);
+        });
+
+        completedInput.addEventListener('change', () => {
+            updateItem(item, "completed", completedInput.checked);
+        });
+
+
         ITEM_CONTAINER.appendChild(itemElement);
 
     }
