@@ -9,4 +9,16 @@ function getItems() {
     return JSON.parse(value);
 }
 
+function setitems(items) {
+    const itemsJson = JSON.stringify(items);
+    localStorage.setItem("checklist", itemsJson);
+}
+
+function addItem() {
+    items.unshift({
+        description: "",
+        completed: false
+    });
+}
+
 console.log(items);
